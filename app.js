@@ -362,24 +362,7 @@ app.get('/bus3_web',function(req,res){
 
 app.post('/app',function(req,res){
     var getstation = req.body.station;
-    console.log(getstation);
-   
-    // function getJSON(){
-    // $.ajax({
-    //       url: "https://data.kaohsiung.gov.tw/opendata/MrtJsonGet.aspx?site=115",
-    //       method: "GET",
-    //       dataType: "json",
-    //       success: function(data) {
-    //         alert("SUCCESS!!!");
-    //       },
-    //       error: function() {
-    //         alert("ERROR!!!");
-    //       }
-    //     });
-    // }
-        // $.getJSON('https://data.kaohsiung.gov.tw/opendata/MrtJsonGet.aspx?site=115&callback=?',function(data) {
-        //     console.log(data);
-        //   });    
+    console.log(getstation);  
     
     request({
         url:"https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/LiveBoard/KRTC?$format=JSON",
@@ -399,13 +382,6 @@ app.post('/app',function(req,res){
                     console.log(result[i].StationName.Zh_tw);
                     }
             }
-            //   var result=JSON.stringify(body, undefined, 2);
-         //   for(var i=0;i<result.length;i++){    
-            //   var result2 = result.split("/");
-            //    var data=result[i];
-
-           // console.log(data.StationID); // body是回傳的json物件，使用JSON.stringify()轉為json字串
-         // }
             res.send(
                 `<html>
                     <head> 
@@ -438,8 +414,6 @@ app.post('/app',function(req,res){
         
             return { 'Authorization': Authorization, 'X-Date': GMTString }; //如果要將js運行在伺服器，可額外加入 'Accept-Encoding': 'gzip'，要求壓縮以減少網路傳輸資料量
         }
-
-
 });
 
 
