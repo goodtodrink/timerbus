@@ -262,24 +262,12 @@ app.get('/bus3_web',function(req,res){
                                     <div class="col">
                                         <input  type="hidden" placeholder="你的位置" aria-label="Search" id="start">
                                     </div>
-                    
-                            
                                     <div class="col-12">
                                         <input  type="search" placeholder="請輸入目的地" aria-label="Search" id="end" >
                                     </div>      
                                     
                             </div>
                             
-                           
-                            <!-- <div class="row justify-content-center">
-                                    <div class="col-6 col-md-4">
-                                        <button class="btn btn-secondary" type="button" data-toggle="collapse"  data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="submit">
-                                            <span style="font-size:13px;">
-                                                送出
-                                            </span> 
-                                        </button>
-                                    </div>
-                             -->
                              <button type="button" class="btn btn-lg btn-primary" id="submit" disabled></button>
                             <div class="" style="height:1px">
                             </div>
@@ -336,8 +324,6 @@ app.get('/bus3_web',function(req,res){
                                     </div>
             
                             <div class="col-12" id="map" style = "height : 500px"></div>
-            
-                            <!-- <div id="warnings-panel" class="col-12"></div> -->
                            
                             
                         </div>
