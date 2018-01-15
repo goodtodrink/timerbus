@@ -1,11 +1,6 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-
-//var jsdom = require('jsdom')
-//, $ = require('jquery');
-
-//var getJSON = require('get-json')
 var engine = require('ejs-locals');
 var jsSHA = require('jssha');
 const request = require('request'); // 載入request模組
