@@ -524,4 +524,4 @@ function GetAuthorizationHeader() {
     return { 'Authorization': Authorization, 'X-Date': GMTString }; //如果要將js運行在伺服器，可額外加入 'Accept-Encoding': 'gzip'，要求壓縮以減少網路傳輸資料量
 }
 
-app.listen(3004);
+app.listen(process.env.PORT || 3006);
