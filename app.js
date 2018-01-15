@@ -360,63 +360,6 @@ app.get('/bus3_web',function(req,res){
 
 })
 
-app.post('/app',function(req,res){
-    var getstation = req.body.station;
-    console.log(getstation);  
-    
-    request({
-        url:"https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/LiveBoard/KRTC?$format=JSON",
-        //method: "GET",
-       //strictSSL: false,
-       headers:GetAuthorizationHeader(),
-        json: true
-      }, (error, response, body) => {
-            if(error){console.log("錯誤");console.log(body);console.log(error);}
-            var output="";
-            var result=body;
-            var NumOfJData = result.length;
-            for (var i = 0; i < NumOfJData; i++) {
-                if(getstation==result[i].StationID){
-                    output="車站編號："+result[i].StationID+"/車站名稱："+result[i].StationName.Zh_tw+"/列車方向："+result[i].TripHeadSign+"/下班車預計抵達時間："+result[i].EstimateTime+"<br>"+output;
-                    console.log(result[i].StationID);
-                    console.log(result[i].StationName.Zh_tw);
-                    }
-            }
-            res.send(
-                `<html>
-                    <head> 
-                        <title>搜尋結果</title>
-                    </head>
-                    <body>
-                        <p>`+output+`</p>
-                        <script >
-                            function myrefresh()
-                            {
-                                window.location.reload();
-                            }
-                            setTimeout('myrefresh()',9000); //指定1秒刷新一次
-                        </script>
-                    </body>
-                </html>`);
-            
-        });
-
-        function GetAuthorizationHeader() {
-            var AppID = '8651028858fd4e40af317a75674d8cb5';
-            var AppKey = 'Fk3eCwv0QM34ihzk1ORkfw3MFUQ';
-        
-            var GMTString = new Date().toGMTString();
-            var ShaObj = new jsSHA('SHA-1', 'TEXT');
-            ShaObj.setHMACKey(AppKey, 'TEXT');
-            ShaObj.update('x-date: ' + GMTString);
-            var HMAC = ShaObj.getHMAC('B64');
-            var Authorization = 'hmac username=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
-        
-            return { 'Authorization': Authorization, 'X-Date': GMTString }; //如果要將js運行在伺服器，可額外加入 'Accept-Encoding': 'gzip'，要求壓縮以減少網路傳輸資料量
-        }
-});
-
-
 function GetAuthorizationHeader() {
     var AppID = '8651028858fd4e40af317a75674d8cb5';
     var AppKey = 'Fk3eCwv0QM34ihzk1ORkfw3MFUQ';
