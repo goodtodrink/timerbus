@@ -3,23 +3,15 @@ var nowPos;
 
 function initMap() {
     var markerArray = [];
-  
-    // Instantiate a directions service.
     var directionsService = new google.maps.DirectionsService;
-  
-    // Create a map and center it on Manhattan.
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 13,
       center: {lat: 22.6313855, lng: 120.2997725}
     });
-    // Create a renderer for directions and bind it to the map.
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-    // Instantiate an info window to hold step text.
     var stepDisplay = new google.maps.InfoWindow;
-    // Display the route between the initial start and end selections.
     calculateAndDisplayRoute(
         directionsDisplay, directionsService, stepDisplay, map);
-    // Listen to change events from the start and end lists.
     var onChangeHandler = function() {
       calculateAndDisplayRoute(
           directionsDisplay, directionsService, stepDisplay, map);
@@ -32,8 +24,6 @@ function initMap() {
     
      var infoWindow = new google.maps.InfoWindow({map: map});
 
-
-  //  HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = {
@@ -73,7 +63,6 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,
   // transit directions.
   console.log(nowPos);
   directionsService.route({
-    // origin: document.getElementById('start').value,
     origin: nowPos,
     destination: document.getElementById('end').value,
     travelMode: google.maps.TravelMode.TRANSIT

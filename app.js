@@ -174,8 +174,7 @@ app.get('/bus2_web',function(req,res){
                                     <div id="floating-panel"></div>
                                  
                                     &nbsp;
-                                            
-                                            
+                   
                     </div>
     
          </div>
@@ -204,7 +203,6 @@ app.get('/bus3_web',function(req,res){
             json: true
           }, (error, response, body) => {
                 if(error){console.log("錯誤");console.log(body);console.log(error);}
-               // var output='';
                 var result=body;
                 var NumOfJData = result.length;
                 for(var h = 0 ; h<getstation_1.length ;h++){
@@ -225,7 +223,6 @@ app.get('/bus3_web',function(req,res){
             res.send(`<!DOCTYPE html>
             <html lang="en">
             <head>
-                    
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <meta http-equiv="X-UA-Compatible" content="ie=edge">
