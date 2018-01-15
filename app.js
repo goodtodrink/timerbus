@@ -225,8 +225,8 @@ app.get('/bus3_web',function(req,res){
                 for(var h = 0 ; h<getstation_1.length ;h++){
                 for (var k = 0; k < NumOfJData; k++) {
                     var station_name = result[k].StationName.En+" Station";
-                //    console.log(getstation_1[h]);
-                //   console.log(station_name);
+                   console.log(getstation_1[h]);
+                  console.log(station_name);
                    if(station_name=="World Game Station"){
                         station_name="World Games Station"
                    }
