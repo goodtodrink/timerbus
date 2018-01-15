@@ -324,6 +324,7 @@ app.get('/bus3_web',function(req,res){
                                 </span>
                             </button>
                         </div>  
+                        &nbsp;
                         <div>
                              <button type="button" class="btn btn-dark" id="nextStep">
                                  <span style="font-size:13px;">
