@@ -226,10 +226,10 @@ app.get('/bus3_web',function(req,res){
                 for (var k = 0; k < NumOfJData; k++) {
                     var station_name = result[k].StationName.En+" Station";
                    //console.log(getstation_1[h]);
-                   console.log(station_name);
-                   if(station_name=="World Game Station"){
-                        station_name="World Games Station"
-                   }
+                 //  console.log(station_name);
+                //    if(station_name=="World Game Station"){
+                //         station_name="World Games Station"
+                //    }
                     if(getstation_1[h]==station_name){
                         output=result[k].StationName.Zh_tw+result[k].TripHeadSign+"於"+result[k].EstimateTime+"分鐘後抵達<br>"+output;
                         console.log(output);
