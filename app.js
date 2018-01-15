@@ -317,14 +317,13 @@ app.get('/bus3_web',function(req,res){
                     
                     <div class="row align-items-center row justify-content-center" style="text-align:center" >
             
-                        <div>
+                        <div class="col-12">
                             <button type="button" class="btn btn-dark" id="loop2">
                                 <span style="font-size:13px;">
                                     
                                 </span>
                             </button>
                         </div>  
-                        &nbsp;
                         <div>
                              <button type="button" class="btn btn-dark" id="nextStep">
                                  <span style="font-size:13px;">
