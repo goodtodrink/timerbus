@@ -1,0 +1,18 @@
+.box{
+	width: 80%;
+    left: 50%;
+    top: 50%;
+	position: absolute;
+
+    margin-left:-250px;
+    margin-top:-100px;
+}
+.search{
+    
+
+    top: 50px;
+}
+
+.danny{
+    height: 800px;
+}
