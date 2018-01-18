@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var engine = require('ejs-locals');
 var jsSHA = require('jssha');
-const request = require('request'); // 載入request模組
+const request = require('request');
 var path = require('path');
 app.engine('ejs', engine);
 app.set('views', path.join(__dirname, 'views'));
