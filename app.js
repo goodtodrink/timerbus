@@ -187,11 +187,6 @@ app.get('/bus3_web',function(req,res){
     var getstation_1 = req.query.station;
     console.log(getstation_1);
     var output='';
-    //console.log(getstation_1);
-    //console.log(getstation_1[0]);
-    
-        // var store_station = getstation_1[h]; 
-        // console.log(store_station);
          request({
             url:"https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/LiveBoard/KRTC?$format=JSON",
             headers:GetAuthorizationHeader(),
@@ -202,11 +197,11 @@ app.get('/bus3_web',function(req,res){
                 var NumOfJData = result.length;
                 for(var h = 0 ; h<getstation_1.length ;h++){
                 for (var k = 0; k < NumOfJData; k++) {
-                    var station_name = result[k].StationName.En+" Station";
+                    var station_name = result[k].StationName.Zh_tw+"站";
                    console.log(getstation_1[h]);
                   console.log(station_name);
-                   if(station_name=="World Game Station"){
-                        station_name="World Games Station"
+                  if(getstation_1[h]=="左營 / 高鐵"){
+                    getstation_1[h]="左營站";
                    }
                     if(getstation_1[h]==station_name){
                         output=result[k].StationName.Zh_tw+result[k].TripHeadSign+"於"+result[k].EstimateTime+"分鐘後抵達<br>"+output;
@@ -233,13 +228,14 @@ app.get('/bus3_web',function(req,res){
             
             </head>
             <body>
-                <script >
-                    function myrefresh()
-                     {
-                        window.location.reload();
-                     }
-                    setTimeout('myrefresh()',30000);
-                 </script>
+                // <script >
+                //     function myrefresh()
+                //      {
+                //         window.location.reload();
+                //      }
+                //     setTimeout('myrefresh()',1000);
+                //  </script>
+
                     <script src="js/bootstrap.offcanvas.js"></script> 
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -322,9 +318,9 @@ app.get('/bus3_web',function(req,res){
                                                 </div>
                                         </nav> 
                                     </div>
-            
+                            <div class="refresh">
                             <div class="col-12" id="map" style = "height : 500px"></div>
-                           
+                           </div>
                             
                         </div>
                     </div>
