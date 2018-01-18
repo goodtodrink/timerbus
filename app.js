@@ -198,8 +198,8 @@ app.get('/bus3_web',function(req,res){
                 for(var h = 0 ; h<getstation_1.length ;h++){
                 for (var k = 0; k < NumOfJData; k++) {
                     var station_name = result[k].StationName.Zh_tw+"站";
-                   console.log(getstation_1[h]);
-                  console.log(station_name);
+                //    console.log(getstation_1[h]);
+                //   console.log(station_name);
                   if(getstation_1[h]=="左營 / 高鐵"){
                     getstation_1[h]="左營站";
                    }
