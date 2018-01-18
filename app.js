@@ -231,7 +231,10 @@ app.get('/bus3_web',function(req,res){
                 <script >
                     function myrefresh()
                      {
-                        window.location.reload();
+                        var a = document.getElementById("map").src
+                        
+                        map.location.replace(a)
+                        
                      }
                     setTimeout('myrefresh()',30000);
                  </script>
