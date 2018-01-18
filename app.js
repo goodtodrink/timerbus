@@ -198,11 +198,9 @@ app.get('/bus3_web',function(req,res){
                 for(var h = 0 ; h<getstation_1.length ;h++){
                 for (var k = 0; k < NumOfJData; k++) {
                     var station_name = result[k].StationName.Zh_tw+"站";
-                //    console.log(getstation_1[h]);
-                //   console.log(station_name);
-                  if(getstation_1[h]=="左營 / 高鐵"){
-                    getstation_1[h]="左營站";
-                   }
+                    if(getstation_1[h]=="左營 / 高鐵"){
+                        getstation_1[h]="左營站";
+                       }
                     if(getstation_1[h]==station_name){
                         output=result[k].StationName.Zh_tw+result[k].TripHeadSign+"於"+result[k].EstimateTime+"分鐘後抵達<br>"+output;
                         console.log(output);
@@ -231,10 +229,7 @@ app.get('/bus3_web',function(req,res){
                 <script >
                     function myrefresh()
                      {
-                        var a = document.getElementById("map").src
-                        
-                        map.location.replace(a)
-                        
+                        window.location.reload();
                      }
                     setTimeout('myrefresh()',30000);
                  </script>
