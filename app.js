@@ -338,7 +338,6 @@ app.get('/bus3_web',function(req,res){
 function GetAuthorizationHeader() {
     var AppID = '8651028858fd4e40af317a75674d8cb5';
     var AppKey = 'Fk3eCwv0QM34ihzk1ORkfw3MFUQ';
-
     var GMTString = new Date().toGMTString();
     var ShaObj = new jsSHA('SHA-1', 'TEXT');
     ShaObj.setHMACKey(AppKey, 'TEXT');

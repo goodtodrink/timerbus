@@ -43,7 +43,7 @@ function initMap() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
   } else {
-    // Browser doesn't support Geolocation
+
     handleLocationError(false, infoWindow, map.getCenter());
     // geolocation error
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -99,9 +99,6 @@ function showSteps(directionResult, markerArray, stepDisplay, map) {
   // when calculating new routes.
   var myRoute = directionResult.routes[0].legs[0];
 
-
-
-
   var sum = 0
  // document.getElementById('warnings-panel').innerHTML = '';
   for(var j = 1;j < myRoute.steps.length;j+=2 ){
@@ -115,17 +112,9 @@ function showSteps(directionResult, markerArray, stepDisplay, map) {
       marker.setPosition(myRoute.steps[i].start_location);
       attachInstructionText(
       stepDisplay, marker, myRoute.steps[i].instructions, map);
-
-      
-      
       sum = sum +  myRoute.steps[i].duration.value;
-    
       total = sum;
-  
       document.getElementById('loop2').innerHTML = '總時間：' + parseInt(total/3600)+'時'+parseInt(total/60%60) + '分' + total%60 + '秒';
-
-
-    
       document.getElementById('warnings-panel').innerHTML += '<br/>路段指示: ' + myRoute.steps[i].instructions + '<br/>路段距離: ' + myRoute.steps[i].distance.value + '公尺<br/>路段時程: ' + parseInt(myRoute.steps[i].duration.value/60%60) + '分' +parseInt(myRoute.steps[i].duration.value%60)+'秒'+'<br/>';
      
     
